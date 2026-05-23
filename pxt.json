@@ -5,7 +5,8 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "pxt-nezha2": "github:elecfreaks/pxt-nezha2#v1.2.1"
+        "pxt-nezha2": "github:elecfreaks/pxt-nezha2#v1.2.1",
+        "pxt-PlanetX-AI": "github:elecfreaks/pxt-planetx-ai#v1.0.10"
     },
     "files": [
         "main.blocks",
