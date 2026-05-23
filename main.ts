@@ -1,6 +1,5 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    radio.setGroup(1)
-    if (receivedNumber == 0) {
+    if (rallyActivo == true) {
         nezhaV2.setComboMotor(nezhaV2.MotorPostion.M1, nezhaV2.MotorPostion.M2)
         nezhaV2.comboRun(100, nezhaV2.VerticallDirection.Up)
         basic.pause(2000)
@@ -18,9 +17,10 @@ radio.onReceivedNumber(function (receivedNumber) {
         nezhaV2.comboStop()
     }
 })
-input.onGesture(Gesture.Shake, function () {
-	
-})
+let rallyActivo = false
+rallyActivo = true
+radio.setGroup(1)
+OLED.init(128, 64)
 basic.forever(function () {
     radio.setGroup(1)
     if (input.buttonIsPressed(Button.A)) {
@@ -37,5 +37,26 @@ basic.forever(function () {
         basic.pause(1000)
     } else {
         basic.showIcon(IconNames.Rabbit)
+    }
+})
+basic.forever(function () {
+    if (PlanetX_Basic.checkColor(PlanetX_Basic.ColorList.yellow)) {
+        rallyActivo = false
+        nezhaV2.comboStop()
+        OLED.clear()
+        OLED.writeStringNewLine("TRONADORA: Medicinal")
+        basic.pause(5000)
+        OLED.clear()
+        rallyActivo = true
+    } else if (PlanetX_Basic.checkColor(PlanetX_Basic.ColorList.green)) {
+        rallyActivo = false
+        nezhaV2.comboStop()
+        OLED.clear()
+        OLED.writeStringNewLine("MAGUEY: Diosa Mayahuel")
+        basic.pause(5000)
+        OLED.clear()
+        rallyActivo = true
+    } else {
+    	
     }
 })

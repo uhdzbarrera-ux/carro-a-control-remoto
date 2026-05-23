@@ -6,7 +6,9 @@
         "radio": "*",
         "microphone": "*",
         "pxt-nezha2": "github:elecfreaks/pxt-nezha2#v1.2.1",
-        "pxt-PlanetX-AI": "github:elecfreaks/pxt-planetx-ai#v1.0.10"
+        "pxt-PlanetX-AI": "github:elecfreaks/pxt-planetx-ai#v1.0.10",
+        "pxt-PlanetX": "github:elecfreaks/pxt-planetx#v1.6.3",
+        "Environment-and-Science-IoT": "github:tinkertanker/pxt-iot-environment-kit#v5.6.4"
     },
     "files": [
         "main.blocks",
